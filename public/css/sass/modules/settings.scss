@@ -1,0 +1,108 @@
+@import "variables";
+
+// main code
+
+* {
+  outline-color: map-get($colors, black) !important;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  font-size: 10px;
+}
+
+body {
+  font-family: $ff;
+  background-color: map-get($colors, white);
+  color: map-get($colors, black);
+  font-size: 1.4rem;
+  overflow-x: hidden;
+
+  // custom scrollbar
+  &::-webkit-scrollbar { width: .3rem; }
+  &::-webkit-scrollbar-track { background-color: map-get($colors, white); }
+  &::-webkit-scrollbar-thumb {
+    background-color: map-get($colors, primary);
+    outline: none;
+    border-radius: 0rem;
+  }
+
+  // change according site color theme
+  ::-moz-selection {
+    background-color: map-get($colors, primary);
+    color: map-get($colors, white);
+  }
+
+  ::selection {
+    background-color: map-get($colors, primary);
+    color: map-get($colors, white);
+  }
+}
+
+img {
+  image-rendering: optimizeSpeed;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+
+  &.px {
+    image-rendering: pixelated;
+  }
+
+  &.aa {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: crisp-edges;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+  }
+}
+
+p, a, li, span, small,
+label, button, strong,
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: 0 0 .1rem rgba(0,0,0,.01);
+}
+
+/* Animations */
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Helpers */
+.up { text-transform: uppercase; }
+
+.spacer {
+  padding-top: 11rem;
+}
+
+.black {
+  color: map-get($colors, black) !important;
+}
+
+.td-none {
+  text-decoration: none !important;
+}
+
+/* Buttons */
+button { all: unset; }
+
+.btn { font-size: 1.6rem; }
+
+[disabled]:hover { cursor: not-allowed; }
+
+// media queries
+@media (max-width: 767px) {
+  /* portrait && landscape */
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  /* tablets && small laptops */
+}

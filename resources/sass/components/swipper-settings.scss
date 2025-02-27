@@ -1,0 +1,66 @@
+// Imports
+@import "../modules/variables.scss";
+
+// main code
+@mixin swipper-settings {
+  width: 100%;
+  object-fit: cover;
+  background-color: map-get($colors, grey);
+
+  .swiper-wrapper {
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .swiper-button-prev {
+    background-image: url(
+      "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23"
+      +'ffffff'
+      +"'%2F%3E%3C%2Fsvg%3E"
+    );
+  }
+
+  .swiper-button-next {
+    background-image: url(
+      "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23"
+    +'ffffff'
+    +"'%2F%3E%3C%2Fsvg%3E"
+    );
+  }
+
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      background-color: map-get($colors, white);
+      border-radius: 10px;
+      opacity: .9;
+      width: 8px;
+      height: 8px;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: map-get($colors, primary);
+    }
+  }
+
+  .swiper-scrollbar {
+    background: rgba(0,0,0,.08);
+    border-radius: 0rem;
+    height: 2px;
+
+    .swiper-scrollbar-drag {
+      background: map-get($colors, primary);
+      border-radius: 0rem;
+    }
+  }
+}
+
+// media queries
+@media (max-width: 767px) {
+  /* portrait && landscape */
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  /* tablets && small laptops */
+}

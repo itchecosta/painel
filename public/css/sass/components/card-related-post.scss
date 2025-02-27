@@ -1,0 +1,68 @@
+// Imports
+@import "../modules/variables.scss";
+
+// main code
+@mixin card-related-post {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: map-get($colors, white);
+  border-radius: .8rem;
+  padding: 1rem;
+  margin: 1.5rem 0 2rem;
+  transition: $transition;
+
+  &:hover {
+    background-color: map-get($colors, light);
+  }
+
+  .image {
+    background-color: map-get($colors, grey);
+    width: 100%;
+    margin: 0 0 1rem;
+
+    img {
+      min-width: 100%;
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .description {
+    .date {
+      color: map-get($colors, black);
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+
+    .card-post-title {
+      color: map-get($colors, black);
+      font-size: 1.8rem;
+      font-weight: 700;
+      max-height: 42px;
+      overflow: hidden;
+      margin: 0 0 .5rem;
+    }
+
+    .short-description {
+      color: map-get($colors, black);
+      font-size: 1.4rem;
+      font-weight: 300;
+      height: 68px;
+      overflow: hidden;
+      margin: 0 0 1rem;
+    }
+  }
+}
+
+// media queries
+@media (max-width: 767px) {
+  /* portrait && landscape */
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  /* tablets && small laptops */
+}

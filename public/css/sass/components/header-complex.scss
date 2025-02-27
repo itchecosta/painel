@@ -1,0 +1,170 @@
+// Imports
+@import "../modules/variables.scss";
+
+@import "navbar-toggler.scss";
+
+// main code
+@mixin header-complex {
+  .navbar {
+    background-color: map-get($colors, ghost);
+    flex-direction: column;
+    padding: 0;
+    transition: $transition $time;
+
+    .navbar-top-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 1.5rem;
+
+      .navbar-brand {
+        padding: 0;
+
+        img {
+          position: absolute;
+          top: 4rem;
+          width: 110px;
+          transform: scale(1.4);
+          transition: $transition $time;
+        }
+      }
+
+      .top-options {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: .5rem 0;
+        margin: 0 0 0 auto;
+
+        a {
+          display: inline-block;
+          text-decoration: none !important;
+          color: map-get($colors, white);
+          font-weight: 600;
+          margin: 0 1.5rem 0 0;
+
+          .icon {
+            margin: 0 .5rem 0 0;
+          }
+
+          span {
+            position: relative;
+            top: .2rem;
+          }
+        }
+      }
+
+      .cta-mob {
+        .btn-theme {
+          font-size: 1.4rem;
+          width: 115px;
+          height: 34px;
+          margin: 0 1.5rem 0 auto;
+        }
+      }
+
+      .navbar-toggler { @include navbar-toggler; }
+    }
+
+    #menu {
+      background-color: map-get($colors, ghost);
+      width: 100%;
+      margin: 0 -1.5rem;
+      padding: 1.2rem 1rem;
+      transition: $transition $time;
+
+      .navbar-nav {
+        justify-content: flex-end;
+
+        .nav-item {
+          .nav-link {
+            color: map-get($colors, white);
+            font-weight: 400;
+            font-size: 1.3rem;
+            letter-spacing: 0.05rem;
+            padding: 1.7rem 2rem 1.7rem 0;
+          }
+
+          .btn-theme {
+            position: relative;
+            top: .5rem;
+            width: 120px;
+            margin-left: auto;
+          }
+        }
+      }
+    }
+  }
+
+  .sticky,
+  .--fix {
+    background-color: map-get($colors, dark-alt);
+
+    .navbar-top-wrapper {
+      .navbar-brand {
+        img {
+          top: 3.75rem;
+          width: 110px;
+          transform: scale(1.0);
+        }
+      }
+    }
+
+    #menu {
+      background-color: map-get($colors, dark);
+    }
+  }
+
+  // media queries
+  @media (max-width: 1279px) {
+    /* portrait && landscape */
+    .navbar {
+      background-color: map-get($colors, dark-alt);
+      padding: .704rem 0 1rem;
+
+      .navbar-top-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 1.5rem;
+
+        .navbar-brand {
+          padding: 0;
+
+          img {
+            position: relative;
+            top: 0;
+            width: initial;
+            transform: scale(1.0);
+            transition: $transition $time;
+          }
+        }
+
+        .top-options {
+          margin: 0 auto 0 2rem;
+        }
+      }
+
+      #menu {
+        background-color: map-get($colors, dark);
+        padding: .8rem 0 2rem;
+        margin: 1rem -1.5rem 0;
+
+        .navbar-nav {
+          justify-content: flex-end;
+
+          .nav-item {
+            .nav-link {
+              padding: .8rem 0;
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
+  }
+}

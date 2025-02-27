@@ -1,0 +1,144 @@
+// Imports
+@import "../modules/variables.scss";
+
+@import "navbar-toggler.scss";
+
+// main code
+@mixin header {
+
+  .navbar {
+    padding: 0 1.5rem;
+    background-color: map-get($colors, white);
+    border-bottom: .2rem solid map-get($colors, primary);
+
+    .navbar-brand {
+      padding: 0;
+      margin: 0;
+
+      img {
+        width: initial;
+      }
+    }
+
+    .navbar-toggler { @include navbar-toggler; }
+
+    #menu {
+      justify-content: flex-end;
+      width: 100%;
+      margin: 0;
+      padding: 0 1rem;
+
+      .navbar-nav {
+        .nav-item {
+          .nav-link {
+            color: map-get($colors, primary);
+            padding: 1.5rem 1.5rem;
+          }
+
+          &.active {
+            .nav-link {
+              font-weight: bold !important;
+              letter-spacing: .03rem;
+            }
+          }
+        }
+
+        .dropdown {
+          .dropdown-toggle {
+            &::after {
+              margin-left: .3rem;
+              vertical-align: .255rem;
+              border-top: .5rem solid;
+              border-right: .5rem solid transparent;
+              border-bottom: 0;
+              border-left: .5rem solid transparent;
+              transition: $transition $time;
+            }
+
+            &[aria-expanded="true"] {
+              &::after {
+                border-top: 0;
+                border-right: .5rem solid transparent;
+                border-bottom: 0.5rem solid;
+                border-left: .5rem solid transparent;
+              }
+            }
+          }
+
+          .dropdown-menu {
+            background-color: map-get($colors, white);
+            border: .2rem solid map-get($colors, primary);
+            border-top: none;
+            font-size: 1.4rem;
+            border-radius: 0 0 .6rem .6rem;
+            padding: 0;
+            margin: 0;
+
+            .dropdown-item {
+              color: map-get($colors, primary);
+              padding: 1rem 1.5rem;
+              transition: $transition $time;
+
+              &:last-of-type {
+                border-radius: 0 0 .6rem .6rem;
+              }
+
+              &:hover {
+                background-color: rgba(000,000,000,.1);
+              }
+            }
+
+            .dropdown-divider {
+              margin: 0;
+              border-top: .2rem solid rgba(000,000,000,.1);
+
+              &:first-of-type {
+                border-top: .2rem solid rgba(000,000,000,.1);
+              }
+
+              &:last-of-type {
+                border-top: .2rem solid rgba(000,000,000,.1);
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+  // media queries
+  @media (max-width: 767px) {
+    /* portrait && landscape */
+    .navbar {
+      padding: 1rem 1.5rem;
+
+      .navbar-brand {
+        img {
+          width: initial;
+        }
+      }
+
+      .navbar-toggler { padding: 0 .5rem; }
+
+      #menu {
+        background: map-get($colors, primary);
+        margin: 1rem -1.5rem 0;
+        padding: .5rem 1.5rem;
+
+        .navbar-nav {
+          .nav-item {
+            .nav-link {
+              color: map-get($colors, white);
+              text-align: right;
+              padding: .8rem 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    /* tablets && small laptops */
+  }
+}

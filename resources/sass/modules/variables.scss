@@ -1,0 +1,24 @@
+// Typography //
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700&display=swap');
+
+$ff: 'Montserrat', sans-serif;
+
+// Colors //
+$colors: (
+  primary-light: #00B6FF,
+  primary: #316DF1,
+  primary-dark: #0D63CE,
+  white: #F6F9FC,
+  light: #DDE7FB,
+  black: #0D1023,
+  dark: #1D1F2E,
+  dark-alt: #27283C,
+  grey: #CADAFB,
+  ghost: rgba(0,0,0,.0)
+);
+
+// Transitions //
+$time: 200ms;
+$ease: cubic-bezier(0.165, 0.84, 0.44, 1);
+$smooth: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$transition: $ease, $time;

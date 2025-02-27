@@ -1,0 +1,65 @@
+// Imports
+@import "../modules/variables.scss";
+
+// main code
+@mixin card-especialidade {
+  a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    transition: $transition;
+    border-radius: .6rem;
+    margin-bottom: 3rem;
+
+    .image {
+      width: 100%;
+      transform: scale(1.0);
+      transition: $transition;
+
+      .label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 190px;
+        background-color: rgba(29, 31, 46,.75);
+        padding: 1rem;
+        transition: $transition;
+
+        span {
+          color: map-get($colors, white);
+          font-size: 1.8rem;
+          font-weight: 500;
+          letter-spacing: .05rem;
+          text-align: center;
+          margin: 0;
+        }
+      }
+    }
+
+    &:hover {
+      .image {
+        transform: scale(1.05);
+
+        .label {
+          background: linear-gradient(
+            to left,
+            rgba(49, 109, 241,.75) 33%,
+            rgba(0, 182, 255,.75)
+          )
+        }
+      }
+    }
+  }
+
+  // media queries
+  @media (max-width: 767px) {
+    /* portrait && landscape */
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    /* tablets && small laptops */
+  }
+}

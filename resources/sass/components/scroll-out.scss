@@ -1,0 +1,30 @@
+// Imports
+@import "../modules/variables.scss";
+
+// main code
+@mixin scroll-out {
+  [data-scroll] {
+    will-change: transform, scale, opacity;
+    opacity: 0;
+    transform: translateY(6rem) scale(0.98);
+    transition: all 1000ms $ease;
+  }
+
+  [data-scroll="in"] {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  [data-scroll="out"] {
+    opacity: 0;
+  }
+}
+
+// media queries
+@media (max-width: 767px) {
+  /* portrait && landscape */
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  /* tablets && small laptops */
+}

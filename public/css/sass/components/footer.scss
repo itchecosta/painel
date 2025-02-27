@@ -1,0 +1,106 @@
+// Imports
+@import "../modules/variables.scss";
+
+@mixin footer {
+  .layer-1 {
+    background-color: map-get($colors, dark-alt);
+    padding: 4rem 0;
+
+    strong {
+      display: block;
+      color: map-get($colors, primary-light);
+      font-size: 1.8rem;
+      margin: 0 0 1rem;
+    }
+
+    span {
+      color: map-get($colors, white);
+      font-size: 1.6rem;
+    }
+
+    p {
+      color: map-get($colors, white);
+      font-size: 1.6rem;
+      line-height: 170%;
+      margin: 0;
+
+      strong {
+        color: map-get($colors, white);
+        font-size: 1.6rem;
+        margin: 0 0 .2rem;
+      }
+    }
+
+    .social {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      a {
+        img {
+          margin: 0 1.5rem 0 0;
+        }
+      }
+    }
+  }
+
+  .layer-2 {
+    background-color: map-get($colors, dark);
+    padding: 1rem 0;
+
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+
+      small {
+        color: map-get($colors, white);
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .layer-1 {
+      .logo-footer {
+        display: block;
+        margin: auto;
+      }
+
+      strong {
+        margin: 15px 0 5px 0;
+        text-align: center;
+      }
+
+      span {
+        display: block;
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+
+        strong {
+          text-align: center;
+        }
+      }
+
+      .social {
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .layer-2 {
+      .wrapper {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        small {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

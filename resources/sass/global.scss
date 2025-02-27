@@ -1,0 +1,63 @@
+// Imports //
+
+// Modules
+@import "modules/variables.scss";
+@import "modules/settings.scss";
+@import "modules/main.scss";
+
+// Components
+@import "components/scroll-out.scss";
+@import "components/swipper-settings.scss";
+@import "components/modals.scss";
+@import "components/form-style.scss";
+@import "components/pagination.scss";
+@import "components/section-title.scss";
+
+// Headers
+@import "components/header.scss";
+@import "components/header-complex.scss";
+
+// Footer
+@import "components/footer.scss";
+
+// Buttons
+@import "components/buttons.scss";
+@import "components/navbar-toggler.scss";
+
+// Cards
+@import "components/card-blog-post.scss";
+@import "components/card-related-post.scss";
+@import "components/card-especialidade.scss";
+
+// Exports //
+@include scroll-out;
+
+.swiper { @include swipper-settings; }
+
+.modal { @include modals; }
+
+.form-group { @include form-style; }
+
+.pagination-wrapper { @include pagination; }
+
+.section-title { @include section-title(map-get($colors, primary)); }
+
+// Header //
+header { @include header-complex; }
+
+// Footer //
+footer { @include footer; }
+
+// Buttons //
+.btn-theme { @include btn-theme; }
+
+.btn-theme-outline { @include btn-theme-outline; }
+
+.navbar-toggler { @include navbar-toggler; }
+
+// Cards //
+.card-blog-post { @include card-blog-post; }
+
+.card-related-post { @include card-related-post; }
+
+.card-especialidade { @include card-especialidade; }

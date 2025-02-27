@@ -1,0 +1,56 @@
+// Imports
+@import "../modules/variables.scss";
+
+// Buttons
+@mixin btn-theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: none;
+  border: none;
+  background: linear-gradient(
+    to right,
+    map-get($colors, primary-light),
+    map-get($colors, primary)
+  );
+  color: map-get($colors, white) !important;
+  text-decoration: none !important;
+  border-radius: 10rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  width: 180px;
+  height: 40px;
+  transition: $smooth $time;
+
+  &:hover {
+    box-shadow: inset 18rem 4rem .3rem rgba(255,255,255,.1);
+  }
+}
+
+@mixin btn-theme-outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: none;
+  border: 2px solid map-get($colors, primary-light);
+  background-color: map-get($colors, white);
+  color: map-get($colors, primary);
+  text-decoration: none !important;
+  border-radius: 10rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  width: 180px;
+  height: 40px;
+  transition: $smooth $time;
+
+  &:hover {
+    box-shadow: inset 20rem 4rem .3rem rgba(54,130,244,.05);
+  }
+}
+
+// media queries
+@media (max-width: 767px) {
+  /* portrait && landscape */
+}
